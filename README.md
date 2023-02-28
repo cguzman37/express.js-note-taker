@@ -5,6 +5,9 @@ AS A small business owner
 I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
+# Installation
+ User will need express version 4.16.4 and uuid version 3.4.0 to run the application.
+
 # Heroku link
 https://pacific-castle-42201.herokuapp.com/ 
 
