@@ -25,8 +25,11 @@ app.post('/notes', (req, res) => {
     
 });
 
-app.delete('/notes/:id', (req, res) => {
-    notes.splice(req.params.id, 1);
-    
+app.delete('/notes/:id',async (req, res) => {
+    const getNotes = await readFileAsync('./db/db.json', 'utf8')
+    let parsedNotes = [].concat(JSON.parse(getNotes));
+    parsedNotes = parsedNotes.filter(note => note.id!== req.params.id);
+    fs.writeFileSync('./db/db.json', JSON.stringify(parsedNotes));
+  
 });
 module.exports = app;
